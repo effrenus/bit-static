@@ -28,7 +28,7 @@ $(function(){
 		},
 		update: function(){
 			this.imageLoaded += 1;
-			this.$el.find('.indicator').width((this.imageLoaded/this.imageCount)*920);
+			this.$el.find('.indicator').width((this.imageLoaded/this.imageCount)*1280);
 			
 			if(this.imageLoaded === this.imageCount)
 				this.$el.remove();
