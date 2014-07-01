@@ -18,18 +18,20 @@ $(function(){
 
 	
 	var Progressbar = {
+        $el: null,
 		init: function(){
 			this.imageCount = ExpertList.length;
 			this.imageLoaded = 0;
 			
-			$('#g-photo').append($('<span class="progress-bar"><span class="indicator"/></span>'));
+            this.$el = $('<span class="progress-bar"><span class="indicator"/></span>');
+			$('.b-page').append(this.$el);
 		},
 		update: function(){
 			this.imageLoaded += 1;
-			$('#g-photo').find('.indicator').width((this.imageLoaded/this.imageCount)*920);
+			this.$el.find('.indicator').width((this.imageLoaded/this.imageCount)*920);
 			
 			if(this.imageLoaded === this.imageCount)
-				$('#g-photo').find('.progress-bar').remove();
+				this.$el.remove();
 		}
 	}
 
